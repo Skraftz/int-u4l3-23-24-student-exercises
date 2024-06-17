@@ -3,7 +3,14 @@ let ssButton = document.querySelector(".ss-button");
 let mathButton = document.querySelector(".math-button");
 let scienceButton = document.querySelector(".science-button");
 
-
+function ifthe(istrue, thething, correctt, incorrectt){
+    if (istrue) {
+    document.querySelector(thething).innerHTML = correctt;
+    document.querySelector(thething).style.color = "green";
+    } else {
+        document.querySelector(thething).innerHTML = incorrectt;
+    }
+};
 
 // For each of the test questions:
 //  - Use conditionals to check whether the correct answer was provided by the user. 
@@ -22,7 +29,7 @@ englishButton.addEventListener("click", function() {
     //  - The answer should be "Mon".
     //  - If the user enters the correct answer, use .innerHTML to display the word "Correct!" in the ".english-message" div. 
     //  - If incorrect, display "Wrong! Try again."
-    
+    ifthe((englishInput.toLowerCase() === "mon"), ".english-message", "Correct!", "Wrong! Try again.");
 
 
 
@@ -41,7 +48,7 @@ mathButton.addEventListener("click", function() {
     //  - The answer should be 30.
     //  - If the user enters the correct answer, use .innerHTML to display the word "Yessss!" in the ".math-message" div. 
     //  - If incorrect, display "Wrong! Try again."
-    
+    ifthe((mathInput === 30), ".math-message", "Yessss!", "Wrong! Try again.");
 
 });
 
@@ -55,7 +62,7 @@ ssButton.addEventListener("click", function() {
     //  - If the user enters the correct answer, use .innerHTML to display the word "You got it!" in the ".ss-message" div. 
     //  - If incorrect, display "Womp, womp. Try again."
 
-
+    ifthe((ssInput.toLowerCase() === "albany"), ".ss-message", "You got it!", "Womp, womp. Try again.");
 
 });
 
@@ -70,7 +77,7 @@ scienceButton.addEventListener("click", function() {
     //  - The answer should be "solid".
     //  - If the user enters the correct answer, use .innerHTML to display the word "Rockstar!" in the ".science-message" div. 
     //  - If incorrect, display "Sad. Try again."
-
+    ifthe((document.querySelector(".science").value.toLowerCase() === "solid"), ".science-message", "Rockstar!", "Sad. Try again.")
 
 
 });
